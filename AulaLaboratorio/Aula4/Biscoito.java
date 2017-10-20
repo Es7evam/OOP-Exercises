@@ -13,6 +13,7 @@ class Biscoito extends Produto{
     }
     public void setQntCancerigeno(int qntCancerigeno){
         this.qntCancerigeno = qntCancerigeno;
+        this.custoBeneficio = 1/((double)qntCancerigeno * 10)*getPreco();
     }
     
     public int compareTo(Object prod){

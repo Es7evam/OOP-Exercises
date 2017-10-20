@@ -13,6 +13,7 @@ class Shampoo extends Produto{
     }
     public void setIrritabilidade(int irritabilidade){
         this.irritabilidade = irritabilidade;
+        this.custoBeneficio = 1/(getPreco()*((double)irritabilidade * 2));
     }
     
     public int compareTo(Object prod){

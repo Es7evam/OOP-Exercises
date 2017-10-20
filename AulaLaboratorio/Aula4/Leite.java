@@ -13,6 +13,7 @@ class Leite extends Produto{
     }
     public void setValidade(int validade){
         this.validade = validade;
+        this.custoBeneficio = getPreco()/2 + (double)validade/getPreco();
     }
     
     public int compareTo(Object prod){
