@@ -16,6 +16,7 @@ class App{
             String pswd = cnsl.readPassword("Digite a sua senha: ").toString();
             user.setPass(user.getCrypto(pswd));
             ReadObject obj = new ReadObject();
+            
             if(obj.readObj(user))
                 System.out.println("Login com sucesso");
             else
