@@ -20,10 +20,15 @@ class User implements Serializable{
         return this.login;
     }
     
-    public String getCrypto(String senha) throws Exception{
-        MessageDigest m=MessageDigest.getInstance("MD5");
-        m.update(senha.getBytes(),0,senha.length());
-        String ret = new BigInteger(1,m.digest()).toString(16);
+    public String getCrypto(String senha){
+        String ret = "";
+        try{
+            MessageDigest m=MessageDigest.getInstance("MD5");
+            m.update(senha.getBytes(),0,senha.length());
+            ret = new BigInteger(1,m.digest()).toString(16);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return ret;
     }
     public void setPass(String senha){
